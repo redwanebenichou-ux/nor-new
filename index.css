@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Tajawal:wght@300;400;500;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+
+/*
+ * Dark theme palette.
+ * Values are chosen so text keeps a contrast ratio of at least 4.5:1 (WCAG AA)
+ * against the dark surfaces it sits on, and control borders stay above 3:1.
+ * Kept before the utilities layer so explicit `dark:` utilities always win.
+ */
+.dark body {
+  background-color: #0b1120;
+  color: #e5e7eb;
+}
+
+/* Surfaces */
+.dark .bg-white {
+  background-color: #111827;
+}
+.dark .bg-gray-50 {
+  background-color: #0b1120;
+}
+.dark .bg-gray-100 {
+  background-color: #1f2937;
+}
+.dark .bg-gray-200 {
+  background-color: #334155;
+}
+.dark .bg-gray-300 {
+  background-color: #475569;
+}
+.dark .bg-primary-50,
+.dark .bg-primary-100 {
+  background-color: rgba(39, 123, 81, 0.22);
+}
+.dark .bg-secondary-50,
+.dark .bg-secondary-100 {
+  background-color: rgba(201, 169, 55, 0.16);
+}
+.dark .bg-red-50,
+.dark .bg-red-100 {
+  background-color: rgba(239, 68, 68, 0.18);
+}
+.dark .bg-green-50,
+.dark .bg-green-100 {
+  background-color: rgba(34, 197, 94, 0.18);
+}
+.dark .bg-blue-50,
+.dark .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.18);
+}
+.dark .bg-yellow-50,
+.dark .bg-yellow-100 {
+  background-color: rgba(234, 179, 8, 0.2);
+}
+
+/* Filled brand buttons: darker green keeps the white label readable */
+.dark .bg-primary-600 {
+  background-color: #1f6b47;
+}
+.dark .bg-secondary-600 {
+  background-color: #8a6f1f;
+}
+
+/* Gradient stops used by the hero section */
+.dark .from-secondary-50 {
+  --tw-gradient-from: #14231b var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(20 35 27 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+.dark .to-white {
+  --tw-gradient-to: #0b1120 var(--tw-gradient-to-position);
+}
+
+/* Text: dark ink becomes light, mid greys stay readable */
+.dark .text-gray-900 {
+  color: #f9fafb;
+}
+.dark .text-gray-800 {
+  color: #f3f4f6;
+}
+.dark .text-gray-700 {
+  color: #d1d5db;
+}
+.dark .text-gray-600 {
+  color: #a9b4c2;
+}
+.dark .text-gray-500 {
+  color: #9ba7b6;
+}
+.dark .text-gray-400 {
+  color: #94a3b8;
+}
+
+/* Accent text: lightened so it clears AA on dark cards */
+.dark .text-primary-800,
+.dark .text-primary-700,
+.dark .text-primary-600,
+.dark .text-primary-500 {
+  color: #86e0ab;
+}
+.dark .text-secondary-700,
+.dark .text-secondary-600 {
+  color: #e9dcae;
+}
+.dark .text-green-800,
+.dark .text-green-700,
+.dark .text-green-600 {
+  color: #86efac;
+}
+.dark .text-blue-800,
+.dark .text-blue-700,
+.dark .text-blue-600 {
+  color: #93c5fd;
+}
+.dark .text-red-800,
+.dark .text-red-700,
+.dark .text-red-600,
+.dark .text-red-500 {
+  color: #fca5a5;
+}
+.dark .text-yellow-800,
+.dark .text-yellow-700,
+.dark .text-yellow-600 {
+  color: #fde68a;
+}
+
+/* Borders: separators stay subtle, interactive control edges stay visible */
+.dark .border-gray-100,
+.dark .border-gray-200 {
+  border-color: #334155;
+}
+.dark .border-gray-300 {
+  border-color: #64748b;
+}
+.dark .border-red-100,
+.dark .border-red-200 {
+  border-color: rgba(239, 68, 68, 0.35);
+}
+
+/* Inputs rely on color-scheme for native controls; only soften placeholders */
+.dark input::placeholder,
+.dark textarea::placeholder {
+  color: #8b95a5;
+}
+
+/* Keyboard focus must stay visible on dark surfaces */
+.dark :focus-visible {
+  outline: 2px solid #86e0ab;
+  outline-offset: 2px;
+}
+
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Cairo', 'Tajawal', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  /* Direction follows <html dir> so the language switcher can flip the layout */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}

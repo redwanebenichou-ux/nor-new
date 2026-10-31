@@ -1,0 +1,56 @@
+{
+  "platform": "vercel",
+  "framework": "vite",
+  "rootDirectory": ".",
+  "installCommand": "npm install",
+  "buildCommand": "npm run build",
+  "outputDirectory": "dist",
+  "description": "قائمة الملفات التي تُرفع إلى GitHub ويبنيها Vercel. ملاحظة: Vercel يقرأ vercel.json للتنفيذ؛ هذا الملف مرجع للقائمة فقط.",
+  "readyFolder": "depoly/",
+  "readyArchive": "deploy-vercel.zip",
+  "readyNote": "مجلد depoly/ يحتوي نسخة نظيفة من ملفات include فقط (بدون node_modules ولا dist) جاهزة للرفع المباشر. deploy-vercel.zip هو نفس المحتوى مضغوطًا. بعد أي تعديل أعد توليدهما.",
+  "env": {
+    "required": [],
+    "optional": ["VITE_SUPABASE_URL", "VITE_SUPABASE_ANON_KEY"],
+    "note": "بدون المتغيرات يعمل الموقع في وضع العرض التجريبي. تُضاف في Vercel → Settings → Environment Variables وليس في المستودع."
+  },
+  "include": [
+    "index.html",
+    "package.json",
+    "package-lock.json",
+    "vercel.json",
+    "vite.config.ts",
+    "vite.split.config.ts",
+    "vitest.config.ts",
+    "tsconfig.json",
+    "tsconfig.node.json",
+    "tailwind.config.js",
+    "postcss.config.js",
+    ".eslintrc.cjs",
+    ".gitignore",
+    ".vercelignore",
+    ".env.example",
+    "README.md",
+    "deploy.json",
+    "public/",
+    "src/"
+  ],
+  "exclude": [
+    "node_modules/",
+    "dist/",
+    ".env",
+    ".env.local",
+    ".env.development.local",
+    ".env.test.local",
+    ".env.production.local",
+    ".freebuff/",
+    "freebuff-sites-build/",
+    ".vercel/",
+    "*.log",
+    "npm-debug.log*"
+  ],
+  "optional": [
+    "Logo.jpg",
+    "screenshot_landing.png"
+  ]
+}

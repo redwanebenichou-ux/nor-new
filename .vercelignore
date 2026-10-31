@@ -1,0 +1,12 @@
+# ملفات لا تُرفع إلى Vercel (يُبنى المشروع هناك من المصدر)
+node_modules
+dist
+dist-ssr
+.git
+.vercel
+*.log
+npm-debug.log*
+
+# لا تُرفع أسرار البيئة — أضف المتغيرات في لوحة Vercel
+.env
+.env.*
